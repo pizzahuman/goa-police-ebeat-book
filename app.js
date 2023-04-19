@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 
 //require routes
-const apiRoutes = require('./routes/index');
+const apiRoutes = require('./Routes/index');
 app.use('/', apiRoutes);
 
 setInterval(function () {
