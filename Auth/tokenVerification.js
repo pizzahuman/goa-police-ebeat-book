@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { formResponse } = require('../helpers/response');
 const httpStatusCodes = require('../constants/http-status-codes');
-const Users = require('../models/user.model');
+// const Users = require('../models/user.model');
 const jwtSecKey = process.env.JWT_SEC_KEY;
 // const { compareSync } = require("bcryptjs");
 
