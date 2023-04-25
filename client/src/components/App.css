@@ -1,26 +1,92 @@
-*{
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  *{
     margin: 0;
     padding: 0;
-}
-header{
+  }
+  header{
     height: 15vh;
-}
-.flex-row-center-all{
+  }
+  .flex-row-center{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.img-holder{
+  }
+  .flex-col-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-holder{
     height: 100%;
     width: 50%;
-}
-.header-img img{
+  }
+  .header-img img{
     height: 10vh;
     margin: 2rem;
-}
-.alert-message{
+  }
+  .alert-message{
     font-size: 1rem;
-}
-
-/* <h1 class="alert-message"><marquee behavior="" direction="">ALERT! Robbbery alert @........</marquee></h1> */
+  }
+  
+  /* Login */
+  .login-main{
+    min-height: 50vh;
+    /* background: #000; */
+  }
+  .login-main h1{
+    margin-bottom: 2.5rem;
+  }
+  .login-main input, select{
+    margin-top: 1.5rem;
+  }
+  .login-main button{
+    margin-top: 1.5rem;
+  }
+  .login-inner-content{
+    margin: 3rem 0;
+    padding: 3rem;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  
+  

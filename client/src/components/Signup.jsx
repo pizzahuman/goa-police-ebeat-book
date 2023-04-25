@@ -2,27 +2,26 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-export const Login = () => {
+export const Signup = () => {
   const history = useNavigate();
 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   async function submit(e) {
     e.preventDefault();
 
     try {
       await axios
-        .post("http://localhost:8000/", {
+        .post("http://localhost:8000/signup", {
           email,
           pass,
         })
         .then((res) => {
           if (res.data === "exists") {
-            history("/home", { state: { id: email } });
-            alert("Welcome old uesr");
+            alert("User Exists");
           } else if (res.data === "notexists") {
-            alert("User not signed up or invalid creds");
+            alert("WElcome new User");
+            history("/home", { state: { id: email } });
           }
         })
         .catch(() => {
@@ -33,19 +32,36 @@ export const Login = () => {
       console.log(e);
     }
   }
-
   return (
     <>
       <div className="login-main flex-col-center">
         <div className="login-inner-content flex-col-center">
-          <h1>EBeat Login</h1>
+          <h1>EBeat Register</h1>
           <form action="post">
-            <div class="input-group mb-3">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
               <input
                 type="text"
                 class="form-control"
                 placeholder="User ID"
-                aria-label="Username"
+                aria-label="User ID"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Phone No"
+                aria-label="phone"
                 aria-describedby="basic-addon1"
               />
             </div>
@@ -59,19 +75,35 @@ export const Login = () => {
               aria-labelledby="passwordHelpBlock"
               placeholder="Password"
             />
+            <input
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              name="cpword"
+              type="cpassword"
+              id="cinputPassword5"
+              class="form-control"
+              aria-labelledby="passwordHelpBlock"
+              placeholder="Confirm Password"
+            />
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
             <button
               type="submit"
               onClick={submit}
               value=""
               className="btn btn-primary"
             >
-              Login
+              Register
             </button>
           </form>
           <br />
           <p>or</p>
           <br />
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/">Log In</Link>
         </div>
       </div>
     </>
