@@ -107,10 +107,10 @@ export const Signup = () => {
               onChange={(e) => setDesignation(e.target.value)}
             >
               <option selected>Select Designation</option>
-              <option value="SP">SP</option>
-              <option value="DYSP">DYSP</option>
-              <option value="INS">Inspector</option>
-              <option value="BO">Beat Officer</option>
+              <option value="1">SP</option>
+              <option value="2">DYSP</option>
+              <option value="3">Inspector</option>
+              <option value="4">Beat Officer</option>
             </select>
 
             <button
