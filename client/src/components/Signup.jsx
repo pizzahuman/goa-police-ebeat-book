@@ -5,23 +5,32 @@ import { useNavigate, Link } from "react-router-dom";
 export const Signup = () => {
   const history = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
+  const [phone, setPhone] = useState("");
   const [pass, setPass] = useState("");
+  const [cpass, setCpass] = useState("");
+  const [designation, setDesignation] = useState("");
+
   async function submit(e) {
     e.preventDefault();
 
     try {
       await axios
         .post("http://localhost:8000/signup", {
-          email,
+          name,
+          id,
+          phone,
           pass,
+          cpass,
+          designation,
         })
         .then((res) => {
           if (res.data === "exists") {
             alert("User Exists");
           } else if (res.data === "notexists") {
             alert("WElcome new User");
-            history("/home", { state: { id: email } });
+            history("/home", { state: { id: phone } });
           }
         })
         .catch(() => {
@@ -40,6 +49,8 @@ export const Signup = () => {
           <form action="post">
             <div class="input-group">
               <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
                 class="form-control"
                 placeholder="Username"
@@ -49,6 +60,8 @@ export const Signup = () => {
             </div>
             <div class="input-group">
               <input
+                value={id}
+                onChange={(e) => setId(e.target.value)}
                 type="text"
                 class="form-control"
                 placeholder="User ID"
@@ -58,6 +71,8 @@ export const Signup = () => {
             </div>
             <div class="input-group">
               <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 type="tel"
                 class="form-control"
                 placeholder="Phone No"
@@ -76,21 +91,28 @@ export const Signup = () => {
               placeholder="Password"
             />
             <input
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
+              value={cpass}
+              onChange={(e) => setCpass(e.target.value)}
               name="cpword"
-              type="cpassword"
+              type="password"
               id="cinputPassword5"
               class="form-control"
               aria-labelledby="passwordHelpBlock"
               placeholder="Confirm Password"
             />
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
+            >
+              <option selected>Select Designation</option>
+              <option value="SP">SP</option>
+              <option value="DYSP">DYSP</option>
+              <option value="INS">Inspector</option>
+              <option value="BO">Beat Officer</option>
             </select>
+
             <button
               type="submit"
               onClick={submit}

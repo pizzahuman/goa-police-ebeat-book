@@ -5,8 +5,9 @@ import { useNavigate, Link } from "react-router-dom";
 export const Login = () => {
   const history = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [id, setId] = useState("");
   const [pass, setPass] = useState("");
+  const [phone, setPhone] = useState("");
 
   async function submit(e) {
     e.preventDefault();
@@ -14,12 +15,13 @@ export const Login = () => {
     try {
       await axios
         .post("http://localhost:8000/", {
-          email,
+          id,
           pass,
+          phone,
         })
         .then((res) => {
           if (res.data === "exists") {
-            history("/home", { state: { id: email } });
+            history("/home", { state: { id: phone } });
             alert("Welcome old uesr");
           } else if (res.data === "notexists") {
             alert("User not signed up or invalid creds");
@@ -42,10 +44,12 @@ export const Login = () => {
           <form action="post">
             <div class="input-group mb-3">
               <input
+                value={id}
+                onChange={(e) => setId(e.target.value)}
                 type="text"
                 class="form-control"
                 placeholder="User ID"
-                aria-label="Username"
+                aria-label="UserID"
                 aria-describedby="basic-addon1"
               />
             </div>
@@ -59,6 +63,17 @@ export const Login = () => {
               aria-labelledby="passwordHelpBlock"
               placeholder="Password"
             />
+            <div class="input-group mb-3">
+              <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                type="tel"
+                class="form-control"
+                placeholder="Phone No"
+                aria-label="Phone"
+                aria-describedby="basic-addon1"
+              />
+            </div>
             <button
               type="submit"
               onClick={submit}
