@@ -7,25 +7,40 @@ const userSchema = new Schema({
     },
     police_id: {
         type: String,
+        unique:true,
         required: true,
     },
-    price: {
-        type: Number,
-        required: true,
+    phone:{
+        type:String,
+        unique:true,
+        required:true
     },
-    quantity: {
-        type: Number,
-        required: true,
-        default:0
-    },
-    volume:{
-        type: String, 
-        required: true,
-    },
-    category_id:{
+    password:{
         type:String,
         required:true
-    }
+    },
+    cpassword:{
+        type:String,
+        required:true
+    },
+    designation:{
+        type:String,
+        required:true
+    },
+    fingerPrint:{
+        type:String
+    },
+    token:{
+        type:String,
+    },
+    otp: {
+        code: {
+          type: String,
+        },
+        expiresAt: {
+          type: Date,
+        },
+      }
 }, { timestamps: true });
 
 module.exports = mongoose.model("user", userSchema);
