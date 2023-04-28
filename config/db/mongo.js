@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const uri = process.env.ATLAS_MONGO_URI;
+const uri = process.env.LOCAL_MONGO_URI;
 
 const options = {
     useNewUrlParser: true,
