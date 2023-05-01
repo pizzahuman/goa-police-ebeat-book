@@ -25,6 +25,9 @@ header {
   height: 100%;
   width: 50%;
 }
+.header{
+  background-color: #fbeabe8e;
+}
 .header-img img {
   height: 10vh;
   margin: 2rem;
@@ -41,15 +44,31 @@ header {
 .login-main input,
 select {
   margin-top: 1.5rem;
+  border-color: rgba(202, 132, 13, 0.59);
+}
+.select-css{
+  border-color: rgba(202, 132, 13, 0.59);
 }
 .login-main button {
   margin-top: 1.5rem;
+  background-color: rgba(27, 25, 76, 0.9);
+  width: 100px;
+}
+.login-main a{
+  text-decoration: none;
+  color: rgb(184, 123, 17);
+  font-weight: 600;
+}
+.login-main a:hover{
+  color: rgba(27, 25, 76, 0.9);
 }
 .login-inner-content {
   margin: 3rem 0;
   padding: 3rem;
   border-radius: 10px;
   border: 2px solid black;
+  text-align: center;
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.25);
 }
 
 /* Officer details */
@@ -58,6 +77,7 @@ select {
 .personal-details {
   padding: 2rem;
   margin: 0;
+  background-color: #8b5f0093;
 }
 .personal-details .col {
   max-width: 200px;
@@ -70,6 +90,7 @@ select {
   padding: 1.5rem;
   border-radius: 50%;
   border: 2px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .personal-details .fa-user {
   font-size: 5rem;
@@ -77,30 +98,40 @@ select {
 
 /* Station.jsx */
 .station-details {
-  margin-top: 2rem;
   min-width: 300px;
+  text-align: left;
+  font-family: sans-serif;
+  background-color: rgba(223, 182, 111, 0.59);
+  padding: 2rem 1rem 0.2rem 1rem;
 }
 .station-details div {
   padding: 0.5rem;
   font-weight: 500;
   font-size: 1.2rem;
-  margin: 0 1rem;
 }
 
 /* Features.jsx */
 .features-main {
   padding: 1rem;
+  background-color: rgba(223, 182, 111, 0.59);
+  
 }
 .features-main button {
   margin: 1rem;
+  padding: 10px;
+  font-size: 19px;
+  font-family: sans-serif;
+  background-color: rgba(27, 25, 76, 0.9);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Footer */
 .footer-main {
-  margin-top: 3.5rem;
-  padding-bottom: 1rem;
+  background-color: #fbeabe8e;
 }
 .footer-inner {
+  margin-top: 4.5rem;
+  padding-bottom: 2.5rem;
   width: 500px;
   display: flex;
   flex-direction: row;
@@ -113,6 +144,11 @@ select {
 }
 .other-footer-features button {
   margin-left: 1.5rem;
+  width: 80px;
+  font-size: 19px;
+  font-family: sans-serif;
+  background-color: rgba(27, 25, 76, 0.9);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .fa-bell {
   color: red;

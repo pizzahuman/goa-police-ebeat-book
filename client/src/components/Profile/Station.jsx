@@ -5,19 +5,19 @@ import React from "react";
 export const Station = () => {
   return (
     <>
-      <div className="station-details flex-row-center">
+      <div className="station-details">
         <div>
-          <span>Beat Area: 1A</span>
+          Beat Area: 1A
         </div>
         <div>
-          <span>Police Station: xyz....</span>
+          Police Station: xyz....
         </div>
         <div>
           <span>
             Police Inspector:
-            <ul type="none">
+            <ul type="none" className="flex-col-center">
               <li>Anil Rathod</li>
-              <li>9087647411</li>
+              <li>PNo: 9087647411</li>
             </ul>
           </span>
         </div>

@@ -83,9 +83,7 @@ export const Login = () => {
               Login
             </button>
           </form>
-          <br />
-          <p>or</p>
-          <br />
+          or
           <Link to="/signup">Sign Up</Link>
         </div>
       </div>

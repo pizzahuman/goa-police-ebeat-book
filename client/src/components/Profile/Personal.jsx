@@ -11,7 +11,7 @@ export const Personal = () => {
             <i class="fa-regular fa-user"></i>
           </div>
         </div>
-        <div className="col col-sm-6 flex-col-center">
+        <div className="col col-sm-6">
           <h4>VINAY SINGH</h4>
           <h4>12Ad341</h4>
           <h4>9090878545</h4>

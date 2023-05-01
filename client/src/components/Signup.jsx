@@ -101,7 +101,7 @@ export const Signup = () => {
               placeholder="Confirm Password"
             />
             <select
-              class="form-select"
+              class="form-select select-css"
               aria-label="Default select example"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
@@ -122,9 +122,7 @@ export const Signup = () => {
               Register
             </button>
           </form>
-          <br />
-          <p>or</p>
-          <br />
+          or
           <Link to="/">Log In</Link>
         </div>
       </div>
